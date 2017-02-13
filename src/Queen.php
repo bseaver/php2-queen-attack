@@ -3,19 +3,19 @@
     {
         private $coordinates;
 
-        function __construct($new_coordinates)
+        function __construct()
         {
 
         }
 
-        function setCoordinates()
+        function setCoordinates($new_coordinates)
         {
-
+            $this->coordinates = $new_coordinates;
         }
 
         function canAttack()
         {
-            
+
         }
     }
  ?>
