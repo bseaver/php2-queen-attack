@@ -8,7 +8,8 @@ require_once "src/Queen.php";
         {
             $test_list = array(
                 array(array('e', 4), array('h', 2), false),
-                array(array('e', 4), array('e', 8), true)
+                array(array('e', 4), array('e', 8), true),
+                array(array('e', 4), array('a', 4), true)
             );
 
             $test_Queen = new Queen;
