@@ -13,6 +13,8 @@
             $output = false;
             if ($opposing_coordinates[0] == $this->coordinates[0]) {
                 return true;
+            } elseif ($opposing_coordinates[1] == $this->coordinates[1]) {
+                return true;
             }
             return $output;
         }
