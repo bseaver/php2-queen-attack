@@ -10,7 +10,11 @@ require_once "src/Queen.php";
                 array(array('e', 4), array('h', 2), false),
                 array(array('e', 4), array('e', 8), true),
                 array(array('e', 4), array('a', 4), true),
-                array(array('e', 4), array('b', 7), true)
+                array(array('e', 4), array('b', 7), true),
+                array(array('e', 4), array('c', 5), false),
+                array(array('e', 4), array('h', 1), true),
+                array(array('e', 4), array('c', 2), true),
+                array(array('e', 4), array('e', 6), true)
             );
 
             $test_Queen = new Queen;
