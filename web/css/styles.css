@@ -1,0 +1,20 @@
+.shaded_square {
+    background-color: lightgrey;
+}
+
+tr {
+    height: 70px;
+}
+
+td {
+    width: 70px;
+}
+
+.center {
+    text-align: center;
+}
+
+
+.chess_piece {
+    font-size: 2em;
+}
