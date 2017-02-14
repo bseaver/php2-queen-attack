@@ -28,7 +28,21 @@
                 return true;
             }
 
-            return $this->onDiagonal($opposing_coordinates, -1, 1);
+            if ($this->onDiagonal($opposing_coordinates, 1, 1)) {
+                return true;
+            };
+
+            if ($this->onDiagonal($opposing_coordinates, 1, -1)) {
+                return true;
+            };
+
+            if ($this->onDiagonal($opposing_coordinates, -1, 1)) {
+                return true;
+            };
+
+            if ($this->onDiagonal($opposing_coordinates, -1, -1)) {
+                return true;
+            };
 
         }
 
