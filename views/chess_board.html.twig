@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+    <link href='css/styles.css' rel='stylesheet' type='text/css'>
+    <title>Queen Attack!</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Queen Attack</h1>
+        <form class='form-inline' action='/'>
+            <div class='form-group'>
+              <label for='queens_coords'>Queen's Coordinates:</label>
+              <input name='queens_coords' class='form-control' type='text' value='{{ queens_coords }}'>
+            </div>
+            <div class='form-group'>
+              <label for='targets_coords'>Rook's Coordinates:</label>
+              <input name='targets_coords' class='form-control' type='text' value='{{ targets_coords }}'>
+            </div>
+            <button type='submit' class='btn-success'>Check if Queen can reach the Rook</button>
+        </form>
+        <br>
+        <div class="table-responsive">
+            <table id='chess_board' class='table table-bordered'>
+                {% for row in rows %}
+                    <tr>
+                    {% for col in cols %}
+                        <td
+                        {% if (loop.parent.loop.index0 + loop.index0 + 1) is divisibleby(2) %}
+                            class='shaded_square'
+                        {% endif %}
+                        >
+                            <p>{{ col }}{{ row }}
+                                {% if col ~ row  == queens_coords %}
+                                    <span class="chess_piece">{{ queen | raw }}</span>
+                                {% endif %}
+                                {% if col ~ row  == targets_coords %}
+                                    <span class="chess_piece">{{ rook | raw }}</span>
+                                {% endif %}
+                            </p>
+                        </td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <h2 class="center">{{ message }}<h2>
+    </div>
+</body>
+</html>
