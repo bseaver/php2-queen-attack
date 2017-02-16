@@ -13,10 +13,18 @@
     );
 
     $app->get('/', function() use ($app) {
-        $queens_coords = $_GET['queens_coords'];
+        $queens_coords = '';
+        if (array_key_exists('queens_coords', $_GET)) {
+            $queens_coords = $_GET['queens_coords'];
+        }
         $queens_coords = preg_replace('/\s+/', '', $queens_coords);
         $queens_xy = str_split($queens_coords);
-        $targets_coords = $_GET['targets_coords'];
+
+        $targets_coords = '';
+        if (array_key_exists('targets_coords', $_GET)) {
+            $targets_coords = $_GET['targets_coords'];
+        }
+
         $targets_coords = preg_replace('/\s+/', '', $targets_coords);
         $targets_xy = str_split($targets_coords);
 
